@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#83F0F0" />
+        </shape>
+    </item>
+    <!-- Overlay with alpha for blur effect -->
+    <item android:id="@+id/blurOverlay">
+        <shape android:shape="rectangle">
+            <solid android:color="#80F0DFDF" /> <!-- Màu đen với alpha 0.5 (50% mờ) -->
+        </shape>
+    </item>
+</layer-list>

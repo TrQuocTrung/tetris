@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">tetris</string>
+    <string name="left_button_description">Di chuyển khối sang trái</string>
+    <string name="right_button_description">Di chuyển khối sang phải</string>
+    <string name="down_button_description">Di chuyển khối rơi xuống</string>
+    <string name="rotate_button_description">Xoay khối</string>
+</resources>

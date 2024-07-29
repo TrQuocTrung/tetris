@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/a2"> <!-- Thay thế your_background_image bằng đường dẫn tới hình nền của bạn -->
+
+    <!-- TextView để hiển thị điểm số -->
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"/>
+
+    <!-- LinearLayout để chứa TetrisView -->
+    <LinearLayout
+        android:id="@+id/gameView"
+        android:layout_width="800px"
+        android:layout_height="1600px"
+        android:layout_below="@id/score"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:background="@drawable/background_game"
+        android:orientation="vertical" />
+
+    <!-- LinearLayout để chứa các nút điều khiển -->
+
+    <!-- LinearLayout để chứa thông báo game over và nút reset -->
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="6dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:id="@+id/leftButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_background"
+            android:contentDescription="@string/left_button_description"
+            android:src="@drawable/left1" />
+
+        <ImageButton
+            android:id="@+id/downButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_background"
+            android:contentDescription="@string/down_button_description"
+            android:src="@drawable/down" />
+
+        <ImageButton
+            android:id="@+id/rightButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_background"
+            android:contentDescription="@string/right_button_description"
+            android:src="@drawable/right" />
+
+        <ImageButton
+            android:id="@+id/rotateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_background"
+            android:contentDescription="@string/rotate_button_description"
+            android:src="@drawable/rotate" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gameOverLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"> <!-- Ẩn ban đầu -->
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/gameOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Over!"
+                android:textSize="24sp"/>
+
+            <!-- Hiển thị điểm số -->
+            <TextView
+                android:id="@+id/finalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Final Score: 0"
+                android:textSize="18sp"
+                android:layout_below="@id/gameOverText"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Nút reset để bắt đầu lại game -->
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset Game"
+                android:layout_below="@id/finalScore"
+                android:layout_marginTop="16dp"/>
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>
